@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login and sign up</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="../home page_files/icon-xceed.png" sizes="32x32">
+<link rel="icon" href="../home page_files/icon-xceed.png" sizes="192x192">
+
+
+<link rel="apple-touch-icon" href="../home page_files/icon-xceed.png">
+<style>
+.header img
+    {
+        height: 60px;
+        width: 120px;
+        margin-top: 30px;
+        margin-left: 30px;
+
+    }
+</style>
+</head>
+<body>
+    <div class="header">
+        <img src="./images/xceed-logo-white.png">
+        <a href ="..//index.html"><img src="./images/delete.png" style="float:right; height: 25px; width:30px; padding-right:50px;
+      margin-top: 40px; "></a>
+
+    </div>
+
+        <section class="sign-in" id="login" style="padding:30px;">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-form">
+                        <h2 class="form-title">Login</h2>
+                        <form method="POST"  action="login.php" class="register-form" id="login-form">
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Email" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="your_pass" placeholder="Password" required/>
+                            </div>
+                           <div> <a href="forgot_password.php" class="signup-image-link" style="color: #6e0270;">Forgot password ??? </a></div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="go" id="signin" class="form-submit" value="Login" style="background-color: #800080;">
+
+                                
+
+                                <?php
+                                if(isset($_GET['error'])){
+                                    $msg = "*Email ID does not exist. Please Create an account.";
+                                    echo "<p style='color:red;' align='center'>".$msg."</p>";
+                                }
+                                ?>
+                                <?php
+                                if(isset($_GET['incrt'])){
+                                    $msg = "*Incorrect Password";
+                                    echo "<p style='color:red;' align='center'>".$msg."</p>";
+                                }
+                                ?>
+                            </div>
+                            <a href="#signup" class="signup-image-link">Create an account</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+</div>
+
+
+        <!-- Sign up form -->
+        <section class="signup" id="signup" style="padding:30px;">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Sign up</h2>
+                        <form method="POST" class="registerform" id="register-form" action="reg.php">
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="firstname" id="First Name" placeholder="First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name-outline"></i></label>
+                                <input type="text" name="lastname" id="Last Name" placeholder="Last Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email" required/>
+                                
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="Password" placeholder="Password" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="confirm_password" id="Confirm Password" placeholder="Repeat your password" onKeyUp="checkInput()" required/>
+                                <script>
+                                   var pass = document.getElementById('Password');
+                                   var myTextBox = document.getElementById('Confirm Password');
+
+                                   function checkInput() {
+                                       var value = myTextBox.value;
+                                       var value1 = pass.value;
+                                     if (value!=value1) {
+                                       myTextBox.style.borderWidth = "5px";
+                                       myTextBox.style.borderStyle = "solid";
+
+                                       myTextBox.style.borderColor = "Red";
+
+                                     } else {
+                                       myTextBox.style.borderWidth = "5px";
+                                       myTextBox.style.borderStyle = "solid";
+
+                                       myTextBox.style.borderColor = "green";
+                                          }
+                                   }
+                                   
+                                    // function matchPassword() {  
+                                    // var pw1 = document.getElementById('Password');  
+                                    // var pw2 = document.getElementById('Confirm Password');  
+                                    // if(pw1 != pw2)  
+                                    // {   
+                                    //     echo "<p style='color:red;' align='center'>""</p>";
+                                    // } 
+                                    // }  
+                                    </script>  
+
+                                
+                          </div>
+                            <div class="form-group">
+                                <label for="contact"><i class="zmdi zmdi-phone"></i></label>
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Mobile Number" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="year"><i class="zmdi zmdi-book"></i></label>
+                                <input type="number" id="Year" name="year" placeholder="Year" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="department"><i class="zmdi zmdi-local-library"></i></label>
+                                <input type="text" name="department" id="department" placeholder="Department" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="college"><i class="zmdi zmdi-graduation-cap"></i></label>
+                                <input type="text" id="College Name" name="college_name" placeholder="College Name" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="city"><i style="padding-bottom: 25px;" class="zmdi zmdi-pin"></i></label>
+                               <!-- <input type="text" id="College City" name="department" placeholder="Department" required/> -->
+                                <select id="collegecity" name="college_city" required>
+                                    <option value="" disabled selected>College district</option>
+                                    <option value="Ariyalur">Ariyalur</option>
+                                    <option value="Chengalpet">Chengalpet</option>
+                                    <option value="Chennai">Chennai</option>
+                                    <option value="Coimbatore">Coimbatore</option>
+                                    <option value="Cuddalore">Cuddalore</option>
+                                    <option value="Dharmapuri">Dharmapuri</option>
+                                    <option value="Dindigul">Dindigul</option>
+                                    <option value="Erode">Erode</option>
+                                    <option value="Kallakurichi">Kallakurichi</option>
+                                    <option value="Kancheepuram">Kancheepuram</option>
+                                    <option value="Karur">Karur</option>
+                                    <option value="Krishnagiri">Krishnagiri</option>
+                                    <option value="Madurai">Madurai</option>
+                                    <option value="Mayiladuthurai">Mayiladuthurai</option>
+                                    <option value="Nagapattinam">Nagapattinam</option>
+                                    <option value="Kanyakumari">Kanyakumari</option>
+                                    <option value="Namakkal">Namakkal</option>
+                                    <option value="Perambalur">Perambalur</option>
+                                    <option value="Pudukottai">Pudukottai</option>
+                                    <option value="Ramanathapuram">Ramanathapuram</option>
+                                    <option value="Ranipet">Ranipet</option>
+                                    <option value="Salem">Salem</option>
+                                    <option value="Sivagangai">Sivagangai</option>
+                                    <option value="Tenkasi">Tenkasi</option>
+                                    <option value="Thanjavur">Thanjavur</option>
+                                    <option value="Theni">Theni</option>
+                                    <option value="Thiruvallur">Thiruvallur</option>
+                                    <option value="Thiruvarur">Thiruvarur</option>
+                                    <option value="Tuticorin">Tuticorin</option>
+                                    <option value="Trichirappalli">Trichirappalli</option>
+                                    <option value="Thirunelveli">Thirunelveli</option>
+                                    <option value="Tirupathur">Tirupathur</option>
+                                    <option value="Tiruppur">Tiruppur</option>
+                                    <option value="Thiruvannamalai">Thiruvannamalai</option>
+                                    <option value="Nilgiris">Nilgiris</option>
+                                    <option value="Vellore">Vellore</option>
+                                    <option value="Viluppuram">Viluppuram</option>
+                                    <option value="Virudhunagar">Virudhunagar</option>
+                                    <option value="Other-State">Other States</option>
+                                  </select> </p>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit"  onclick="matchPassword()" name="save" value="Sign Up" id="signup" class="form-submit" style="background-color: #800080;">
+                                <?php
+                                if(isset($_GET['exist'])){
+                                    $msg = "User email id exists already!";
+                                    echo "<p style='color:red;' align='center'>".$msg."</p>";
+                                }
+
+                               
+                                
+                                if(isset($_GET['pass'])){
+                                    $msg = "Password and Confirm Password doesnt Match!Please try Signing up again";
+                                    echo "<p style='color:red;' align='center'>".$msg."</p>";
+                                }
+                                       
+                                ?>
+                            </div>
+
+
+
+                            <a href="#login" class="signup-image-link">Already have an account ?? </a><br><br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sing in  Form -->
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

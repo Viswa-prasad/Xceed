@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Event registration form</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="./home page_files/icon-xceed.png" sizes="32x32">
+		<link rel="icon" href="./home page_files/icon-xceed.png" sizes="192x192">
+		<link rel="apple-touch-icon" href="./home page_files/icon-xceed.png">
+		<meta name="author" content="colorlib.com">
+
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="fonts/linearicons/style.css">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="image-holder">
+				<img src="images/events_form.jpg" alt="" style="height: 100%">
+			</div>
+            <div class="form-content">
+            	<form action="#">
+            		<div id="wizard">
+	            		<!-- SECTION 1 -->
+		                <h4></h4>
+		                <section>
+	                		<h3>Event information</h3>
+							<div class="info">
+								<div class="info-item">
+									<span class="lnr lnr-map"></span>
+									<span class="unit">Title:</span>
+								    Teck! Master
+								</div>
+								<div class="info-item">
+									<span class="lnr lnr-calendar-full"></span>
+									<span class="unit">Date:</span>
+								    January 9,2021
+								</div>
+								<div class="info-item">
+									<span class="lnr lnr-clock"></span>
+									<span class="unit">Time:</span>
+								    8:00 am - 5:00 pm
+								</div>
+								<div class="info-item">
+									<span class="lnr lnr-apartment"></span>
+									<span class="unit">G-Meet link:</span>
+								    .......
+								</div>
+								<div class="info-item">
+									<span class="lnr lnr-earth"></span>
+									<span class="unit">Website: </span>
+								    ........
+								</div>
+								<span style="font-size: 20px;"> No of Participants - 1 </span> 
+							</div>
+		                </section>
+
+						<!-- SECTION 2 -->
+		                <h4></h4>
+		                <section>
+							<h3>Details confirmation</h3>
+							<?php
+								
+								include("config.php");
+								session_start();
+								$_SESSION['reg']='2';
+								
+								if(isset($_SESSION['kid'])){
+									$kid = $_SESSION['kid'];
+									$sql = mysqli_query($conn,"SELECT * FROM USER where kid='$kid'");
+									if(mysqli_num_rows($sql)>0) {
+										while($row = mysqli_fetch_row($sql)){
+										
+							?>
+							<div class="form-wrapper">
+								<label for="">Name:</label><?= $row[2]; $row[3] ?>
+							</div>
+							<div class="form-wrapper">
+								<label for="" class="label-input">E-mail:</label><?= $row[4] ?>
+							</div>
+							<div class="form-wrapper">
+								<label for="" class="label-input">Phone:</label><?= $row[5] ?>
+							</div>
+							<div class="form-wrapper">
+								<label for="" class="label-input">College:</label><?= $row[6] ?>
+							</div>
+							<div class="form-wrapper">
+								<label for="" class="label-input">College city:</label><?= $row[7] ?>
+							</div>
+							<div class="form-wrapper">
+								<label for="" class="label-input">Year:  </label><?= $row[8] ?>
+							</div>
+							<div class="form-wrapper">
+								<label for="" class="label-input">Dept:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><?= $row[9] ?>
+							</div>
+							<?php
+									}
+								}
+							}else{
+									echo '<p style="color:red;">You need to login first</p>';
+							}
+							?>
+		                </section>
+
+		                <!-- SECTION 3 -->
+		                <h4></h4>
+		               <section>
+		                	<h3 style="margin-bottom: 50px;">Remainder for the participants</h3>
+		                	<!--<div class="request">
+		                		<div class="special-request">
+	                				<label for="">Special Request:</label>
+		                			<input type="text" class="form-control">
+		                		</div>
+		                	-->	<input type="text" class="form-control" style="width: 100%;">
+		                		<div class="question-request"><span>Only registered mail-id will be accepted during the participation of the events </span>
+<br><br>
+
+
+
+		                			<p style="align-content: center;">THANK YOU !!! </p>
+		                			<br>
+<br>
+		                			<!--<input type="text" class="form-control" style="display: inline-block;">
+		                			<span>How many associates? </span>
+		                			<input type="text" class="form-control" style="display: inline-block;">
+		                			<span>(Adiditional rates will apply for events requiring staff)</span>
+		                		</div>
+		                	</div>
+		                	<div class="checkbox">
+								<label>
+									<input type="checkbox" checked> Please accept terms and conditions ?
+									<span class="checkmark"></span>
+								</label>
+							</div>-->
+		                </section>
+	            	</div>
+            	</form>
+	
+
+
+
+
+            </div>
+		</div>
+
+		<script src="js/jquery-3.3.1.min.js"></script>
+		
+		<!-- JQUERY STEP -->
+		<script src="js/jquery.steps.js"></script>
+
+		<script src="js/main.js"></script>
+<!-- Template created and distributed by Colorlib -->
+</body>
+</html>
