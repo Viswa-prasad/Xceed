@@ -332,7 +332,7 @@ border-radius: 5px;
 <link rel="stylesheet" id="a13-main-style-css" href="./workshop details_files/style.css" type="text/css" media="all">
 <link rel="stylesheet" id="a13-user-css-css" href="./workshop details_files/user_120.css" type="text/css" media="all">
 <style id="a13-user-css-inline-css" type="text/css">
- .single-post .title-bar.outside{background-image:url(https://cdn.statically.io/img/www.scitecheuropa.eu/wp-content/uploads/2019/04/electric-vehicles-market-growth-iStock-3alexd.jpg)}
+ .single-post .title-bar.outside{background-image:url("https://physicsworld.com/wp-content/uploads/2019/11/electric-car-954558336-iStock_PlargueDoctor.jpg")}
 </style>
 <link rel="stylesheet" id="font-awesome-5-all-css" href="./workshop details_files/all.min.css" type="text/css" media="all">
 <link rel="stylesheet" id="font-awesome-4-shim-css" href="./workshop details_files/v4-shims.min.css" type="text/css" media="all">
@@ -407,7 +407,7 @@ WebFontConfig = {
         <a href ="./index.html#blog"><img src="./home page_files/delete.png" style="float:right; height: 25px; width:25px; padding-right:50px;
       margin-top: 40px; "></a>
     
-    </div><div class="overlay-color"><div class="in" style="position: relative; top: 0px; opacity: 1;"><div class="post-meta"><time class="entry-date published updated" datetime="2019-01-29T14:35:16+00:00" itemprop="datePublished">January 9, 2021</time> by <span class="fn" itemprop="name">JayaKrishnan, Hyundai</span></a>  </div><div class="titles"><h1 class="page-title entry-title" itemprop="headline">Electrical vehicles</h1></div></div></div></header>
+    </div><div class="overlay-color"><div class="in" style="position: relative; top: 0px; opacity: 1;"><div class="post-meta"><time class="entry-date published updated" datetime="2019-01-29T14:35:16+00:00" itemprop="datePublished">February 13, 2021</time> by <span class="fn" itemprop="name">JayaKrishnan, Hyundai</span></a>  </div><div class="titles"><h1 class="page-title entry-title" itemprop="headline">Electrical vehicles</h1></div></div></div></header>
         <article id="content" class="clearfix" itemtype="https://schema.org/CreativeWork" itemscope="" >
             <div class="content-limiter" >
                 
@@ -420,12 +420,14 @@ WebFontConfig = {
                                         
                                        <p><b>Payment:</b><br> 
                                         
-                                        Once you register, you'll be forwarded to the payment portal. After paying, have a screenshot of payment confirmation for further reference.  </p> 
+                                        Once you register, within a few days you will be sent the payment link via mail. After paying, have a screenshot of payment confirmation for further reference.  </p> 
                                         
                                         <p><b>Date:</b>
-                                        9th January 2021</p>
-                                        <p><b>Duration:</b> 6-7 hrs <br></p>
-                                        <p><b>Mode:</b> Live online session<br></p>
+                                            13th February 2021</p>
+                                            <p><b>Duration:</b> 6 hrs <br></p>
+                                            <p><b>Session 1:</b> 9:30 am to 1:00 pm <br></p>
+                                            <p><b>Session 2:</b> 2:00 pm to 4:30 pm <br></p>
+                                            <p><b>Mode:</b> Live online session<br></p>
                                         
                                         <p><b>Prerequisites:</b><br>
                                         
@@ -445,6 +447,13 @@ WebFontConfig = {
                                             <li>Limited seats are available.</li>
                                         </ul>
                                         </p>
+
+                                        <p><b>Contact:</b><br>
+                                            <ul>
+                                                <li>Surya N - 9500372299</li>
+                                                <li>Yamini R - 9597461340</li>
+                                            </ul>
+                                            </p>
                                 <br><br>
                                 <!--<div class="center-alignment"><span><a href="workshop2_registration.html" style="color: white">Register Now!</a></span></div>--->
                                 <?php
@@ -458,7 +467,7 @@ WebFontConfig = {
                                 }
                             ?>
 
-                            <center>
+                            <!-- <center>
                                 <section id='wk2_sub'>
                                     <?php
                                     if(isset($_GET['wk2'])){
@@ -471,13 +480,21 @@ WebFontConfig = {
                                     ?>
 
                                 </section>
-                            </center>
+                            </center> -->
                             <center>
                                 <section id='wk_sh2'>
                                     <?php
                                     if(isset($_GET['wksh2'])){
-                                        echo '<p style="color:red; font-size:large; margin-left:5%; margin-top:5%;" align-content="center" >*You have already registered for the workshop.</p>';
-                                    }
+                                        if($_GET['wksh2']==1)
+                                        {
+
+                                        echo '<p style="color:red; font-size:large; margin-left:5%; margin-top:5%;" align-content="center" >*You have already registered for React JS workshop.</p>';
+                                    }else if($_GET['wksh2']==2)
+                                    {
+
+                                    echo '<p style="color:red; font-size:large; margin-left:5%; margin-top:5%;" align-content="center" >*You have already registered for Electrical vehicle workshop.</p>';
+                                }
+                                }
                                     
                                     ?>
 

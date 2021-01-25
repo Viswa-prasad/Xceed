@@ -13,6 +13,8 @@ session_start();
 <link rel="icon" href="../home page_files/icon-xceed.png" sizes="32x32">
 <link rel="icon" href="../home page_files/icon-xceed.png" sizes="192x192">
 <link rel="apple-touch-icon" href="../home page_files/icon-xceed.png">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
 <style>
 
 /* Extra small devices (phones, 600px and down) */
@@ -576,25 +578,31 @@ $kid = mysqli_real_escape_string($conn,$_SESSION["kid"]);
         $stmt->bind_param("sss",$kid,$email,$workshop); 
         $stmt->execute();
         $stmt->close();
-        $display= "HI ". strtoupper($first_name)."
-         !! your payment link will be sent to your mail:$email
-         for workshop  $work";
+        // "HI ". strtoupper($first_name)."
+        $display= "Your payment link will be sent to your mail.";
+        //  for workshop  $work";
         $to = $email;
-        $subject = "Xceed";
-        $txt = "HI!! .$first_name.
-               your payment link will be sent later.Kindly check your mail promptly to ensure your registration for $work.";
+        $subject = "Greetings from team Xceed and Karnival, K!urukshetra.";
+        $txt = "HI $first_name. You have successfully registered for the $work workshop dated on 13/02/2021. A mail regarding the payment for workshops will be generated in few days. Kindly check the registered mail for further information. Thank you! .";
         $headers = "From: xceedteam2020@gmail.com" . "\r\n" ;
         // "CC: meets@example.com";
         mail($to,$subject,$txt,$headers);
         }
       ?>
-    <h3><?php 
-    echo $display?></h3> <br>
-    <p> pay via the link </p>
+      <?php 
+       echo "<div class='icon'>
+       <i class=''>✓</i>
+       </div>";?>
+       <h1>SUCCESSFULLY REGISTERED <h1>
+    <h2><?php 
+    echo $display?></h2> 
+    <p><?php echo  "<font-family: 'Raleway', sans-serif;>MAIL - ".$email ?></p><br>
+    <p><?php echo  "WORKSHOP - ".$work ?></p><br>
+    <p> Pay via the link </p>
         <!-- <p>We request you to retry the payment. </p> -->
         <!-- <p>Order - <br> Transaction ID - <br> Payment received - </p> -->
 
-<br/>
+
  <!-- <?php if($formError) { ?>
 	
       <span style="color:red">Please fill all mandatory fields.</span>

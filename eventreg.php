@@ -8,32 +8,19 @@
     $row = mysqli_fetch_array($result);
     $city = $row['college_city'];
     $email = $row['email'];
-    $paid=0;
+    $wk=NULL;
 
 if(isset($_SESSION['kid'])){
        $kid = $_SESSION['kid'];
-$sql="SELECT * from payment where kid='$kid'";//.$_SESSION['kid'].
+$sql="SELECT * from workshops where kid='$kid'";//.$_SESSION['kid'].
 $result=mysqli_query($conn,$sql);
 if(mysqli_num_rows($result)){
     while($row = mysqli_fetch_array($result)){  
-    $paid=$row[3];
+    $wk=$row[2];
     }
 }
 }
-    if($city == "Madurai" || $city== "Thanjavur"){
-        $to = $email;
-        $subject = "Xceed";
-        $txt = "WELCOME to XCEED. Wait till fourth week.";
-        $headers = "From: xceedteam2020@gmail.com" . "\r\n" ;
-        // "CC: meets@example.com";
-        mail($to,$subject,$txt,$headers);
-        //header("Location:index.html");
-        echo "<script> alert('Kindly check your mail for more information!');
-                        window.location.href='index.html';
-                        </script>";
-                        
-    }
-    else{
+    
         if(isset($_SESSION['reg']))
         {
         if(($_SESSION['reg']==1)){
@@ -138,31 +125,33 @@ if(mysqli_num_rows($result)){
                 //header("Location:index.html");
                 header("location: event4.html?event4=1#event4_sub");
             }
-        }if(($_SESSION['reg']==5 && $paid==0)){
+        }if(($_SESSION['reg']==5 || $_SESSION['reg']==6) && $wk==NULL){
        
            
             header("location: ./payments/proccedtopay.php");
         
     
-        }
-         if(($_SESSION['reg']==6 && $paid==0)){
-
-           
-            header("location: ./payments/proccedtopay.php");
-            
-        }else if($_SESSION['reg']==5 && $paid==1){
+        }else if($_SESSION['reg']==5 && $wk=='w1'){
            
         header("location: ./react_js.html?wksh1=1#wk_sh1");
             
-        }else if($_SESSION['reg']==6 && $paid==1){
+        }else if($_SESSION['reg']==5 && $wk=='w2'){
+           
+            header("location: ./react_js.html?wksh1=2#wk_sh1");
+                
+            }
+        else if($_SESSION['reg']==6 && $wk=='w1'){
            
             header("location: ./electrical_vehicles.html?wksh2=1#wk_sh2");
+        }else if($_SESSION['reg']==6 && $wk=='w2'){
+           
+            header("location: ./electrical_vehicles.html?wksh2=2#wk_sh2");
         }    
 
     }
 
 
-    }
+    
     
     
    

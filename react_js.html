@@ -407,7 +407,7 @@ WebFontConfig = {
         <a href ="./index.html#blog"><img src="./home page_files/delete.png" style="float:right; height: 25px; width:25px; padding-right:50px;
       margin-top: 40px; "></a>
     
-    </div><div class="overlay-color"><div class="in" style="position: relative; top: 0px; opacity: 1;"><div class="post-meta"><time class="entry-date published updated" datetime="2019-01-29T14:35:16+00:00" itemprop="datePublished">January 9, 2021</time> by <span class="fn" itemprop="name">Om Prakash, PayPal</span></a>  </div><div class="titles"><h1 class="page-title entry-title" itemprop="headline">React JS</h1></div></div></div></header>
+    </div><div class="overlay-color"><div class="in" style="position: relative; top: 0px; opacity: 1;"><div class="post-meta"><time class="entry-date published updated" datetime="2019-01-29T14:35:16+00:00" itemprop="datePublished">February 13, 2021</time> by <span class="fn" itemprop="name">Jayanthanan Abaian, Logward</span></a>  </div><div class="titles"><h1 class="page-title entry-title" itemprop="headline">React JS</h1></div></div></div></header>
         <article id="content" class="clearfix" itemtype="https://schema.org/CreativeWork" itemscope="" >
             <div class="content-limiter" >
                 
@@ -419,11 +419,13 @@ WebFontConfig = {
                                         
                                        <p><b>Payment:</b><br> 
                                         
-                                        Once you register, you'll be forwarded to the payment portal. After paying, have a screenshot of payment confirmation for further reference.</p> 
+                                        Once you register, within a few days you will be sent the payment link via mail. After paying, have a screenshot of payment confirmation for further reference.</p> 
                                         
                                         <p><b>Date:</b>
-                                            9th January 2021</p>
-                                        <p><b>Duration:</b> 6-7 hrs <br></p>
+                                            13th February 2021</p>
+                                        <p><b>Duration:</b> 6 hrs <br></p>
+                                        <p><b>Session 1:</b> 9:30 am to 1:00 pm <br></p>
+                                        <p><b>Session 2:</b> 2:00 pm to 4:30 pm <br></p>
                                         <p><b>Mode:</b> Live online session<br></p>
                                         
                                         <p><b>Prerequisites:</b><br>
@@ -444,7 +446,13 @@ WebFontConfig = {
                                             <li>Limited seats are available.</li>
                                         </ul>
                                         </p>
-                                
+                                        
+                                        <p><b>Contact:</b><br>
+                                            <ul>
+                                                <li>Boojithkrishna V - 9789924345</li>
+                                                <li>Vivek Ramkumar - 9176253929</li>
+                                            </ul>
+                                            </p>
                                     
                                 <br><br>
                                 <?php
@@ -457,7 +465,7 @@ WebFontConfig = {
                                     </div>';
                                 }
                             ?>
-                            <center>
+                            <!-- <center>
                                 <section id='wk1_sub'>
                                     <?php
                                     if(isset($_GET['wk1'])){
@@ -471,14 +479,21 @@ WebFontConfig = {
                                     ?>
 
                                 </section>
-                            </center>
+                            </center> -->
                             <center>
                                 <section id='wk_sh1'>
                                     <?php
                                     if(isset($_GET['wksh1'])){
-                                        echo '<p style="color:red; font-size:large; margin-left:5%; margin-top:5%;" align-content="center" >*You have already registered for the workshop.</p>';
-                                    }
-                                    
+                                        if($_GET['wksh1']==1)
+                                        {
+
+                                        echo '<p style="color:red; font-size:large; margin-left:5%; margin-top:5%;" align-content="center" >*You have already registered for React JS workshop.</p>';
+                                    }else if($_GET['wksh1']==2)
+                                    {
+
+                                    echo '<p style="color:red; font-size:large; margin-left:5%; margin-top:5%;" align-content="center" >*You have already registered for Electrical vehicle workshop.</p>';
+                                }
+                                }
                                     ?>
 
                                 </section>
