@@ -574,9 +574,12 @@ $kid = mysqli_real_escape_string($conn,$_SESSION["kid"]);
             " workshop";
         }
         else{
-        $stmt = $conn->prepare("INSERT INTO workshops(kid,email,workshop_name) VALUES(?,?,?)");
-        $stmt->bind_param("sss",$kid,$email,$workshop); 
-        $stmt->execute();
+	$query = "INSERT INTO workshops(kid,email,workshop_name) VALUES("sss",'$kid','$email','$workshop')";
+        $res=  mysqli_query($conn,$query);
+        
+// 	$stmt = $conn->prepare("INSERT INTO workshops(kid,email,workshop_name) VALUES(?,?,?)");
+//         $stmt->bind_param("sss",$kid,$email,$workshop); 
+//         $stmt->execute();
         $stmt->close();
         // "HI ". strtoupper($first_name)."
         $display= "Your payment link will be sent to your mail.";
