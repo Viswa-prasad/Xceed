@@ -581,12 +581,12 @@ $kid = mysqli_real_escape_string($conn,$_SESSION["kid"]);
         // "HI ". strtoupper($first_name)."
         $display= "Your payment link will be sent to your mail.";
         //  for workshop  $work";
-        $to = $email;
+        /*$to = $email;
         $subject = "Greetings from team Xceed and Karnival, K!urukshetra.";
         $txt = "HI $first_name. You have successfully registered for the $work workshop dated on 13/02/2021. A mail regarding the payment for workshops will be generated in few days. Kindly check the registered mail for further information. Thank you! .";
         $headers = "From: xceedteam2020@gmail.com" . "\r\n" ;
         // "CC: meets@example.com";
-        mail($to,$subject,$txt,$headers);
+        mail($to,$subject,$txt,$headers);*/
         }
       ?>
       <?php 
