@@ -54,12 +54,12 @@ else{
     if(isset($_SESSION["kid"])){
         header("location: ../index.html");
     }
-	$to = $email;
+    /*$to = $email;
     $subject = "Xceed:Signup Completed!";
     $txt = "Greetings from team Xceed and Karnival, K!urukshetra. You have successfully signed-up. Your K! ID is: $kid, please take a note of it. Look into our events and workshops and start registering Thank you!";
     $headers = "From: xceedteam2020@gmail.com" . "\r\n" ;
     // "CC: meets@example.com";
     mail($to,$subject,$txt,$headers);
-    $conn->close();
+    $conn->close();*/
 }
 ?>
