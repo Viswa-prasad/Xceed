@@ -103,13 +103,13 @@ include("config.php");
                                             $password=$row["pass_word"];
                                             
                                             if($email_id==$fetch_email_id) {
-                                                $to = $email_id;
+                                                /*$to = $email_id;
                                                 $subject = "Reset-Password";
                                                 $txt = "Reset your password  : http://localhost/lander/login%20and%20signup_files/reset_password.php";
                                                 $headers = "From: xceedteam2020@gmail.com" . "\r\n" ;
                                                 // "CC: meets@example.com";
                                                 mail($to,$subject,$txt,$headers);
-                                                echo '<p style=color:green; align="center">*We have mailed a link to reset your password</p>';
+                                                echo '<p style=color:green; align="center">*We have mailed a link to reset your password</p>';*/
                                                 
                                             }
                                             else{
